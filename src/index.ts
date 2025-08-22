@@ -29,7 +29,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://restaurant-frontend.vercel.app", // Vercel ka default domain
+      "https://restaurantfrontenddeployment-nine.vercel.app", // Vercel ka default domain
     ],
     credentials: true,
   })
