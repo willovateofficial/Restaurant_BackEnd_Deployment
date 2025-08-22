@@ -1,9 +1,9 @@
-//tsconfig.json
-
 {
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "dist",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -11,7 +11,8 @@
     "types": ["node", "express"],
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-     "typeRoots": ["./src/types", "./node_modules/@types"]
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
