@@ -6,9 +6,12 @@
   "scripts": {
     "create-db": "ts-node scripts/create-db.ts",
     "generate": "npx prisma generate",
-    "migrate": "npx prisma migrate dev --name init",
+    "migrate:dev": "npx prisma migrate dev --name init",
+    "migrate:deploy": "npx prisma migrate deploy",
     "dev": "ts-node-dev --respawn src/index.ts",
-    "setup": "npm run create-db && npm run migrate && npm run generate"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "setup": "npm run create-db && npm run migrate:deploy && npm run generate"
   },
   "repository": {
     "type": "git",
