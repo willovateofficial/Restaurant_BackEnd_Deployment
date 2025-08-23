@@ -1,7 +1,7 @@
 import { Response, NextFunction } from "express";
 import { BusinessOwnerRequest } from "./authenticateJWT";
 
-export function authorizeRoles(...allowedRoles: ("Owner" | "SuperAdmin" | "Manager" | "Staff")[]) {
+export function authorizeRoles(...allowedRoles: ("Owner" | "SuperAdmin" | "Manager" | "Staff" | "Chief")[]) {
   return (
     req: BusinessOwnerRequest,
     res: Response,
