@@ -104,7 +104,7 @@ router.post(
 router.get(
   "/business/:businessId/users",
   authenticateBusinessOwnerJWT,
-  authorizeRoles("Owner", "Manager", "Staff"),
+  authorizeRoles("Owner", "Manager", "Staff", 'Chief'),
   async (req: BusinessOwnerRequest, res: Response): Promise<void> => {
     const { businessId } = req.params;
     const businessIdNum = Number(businessId);
