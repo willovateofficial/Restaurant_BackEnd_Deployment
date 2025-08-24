@@ -29,7 +29,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://willovaterestofrontenddeployment.vercel.app", // Vercel ka default domain
+      "https://www.willovateresto.com", // Vercel ka default domain
     ],
     credentials: true,
   })
