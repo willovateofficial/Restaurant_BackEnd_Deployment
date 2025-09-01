@@ -12,7 +12,7 @@ const isRoleAllowed = (role: string | undefined, allowedRoles: string[]) => {
   return allowedRoles.includes(role?.toLowerCase() || "");
 };
 
-// Create inventory item (Only owner, manager, staff, chief)
+// Create inventory item (Only owner, manager, staff, chef)
 router.post(
   "/",
   authenticateBusinessOwnerJWT,
@@ -21,7 +21,7 @@ router.post(
     const businessId = req.businessOwner?.businessId;
     const role = req.businessOwner?.role;
 
-    if (!isRoleAllowed(role, ["owner", "manager", "staff", "chief"])) {
+    if (!isRoleAllowed(role, ["owner", "manager", "staff", "chef"])) {
       res.status(403).json({ error: "Access denied" });
       return;
     }
@@ -72,7 +72,7 @@ router.get(
   }
 );
 
-// Update inventory (Only owner, manager, staff, "chief)
+// Update inventory (Only owner, manager, staff, "chef)
 router.put(
   "/:id",
   authenticateBusinessOwnerJWT,
@@ -81,7 +81,7 @@ router.put(
     const id = Number(req.params.id);
     const role = req.businessOwner?.role;
 
-    if (!isRoleAllowed(role, ["owner", "manager", "staff", "chief"])) {
+    if (!isRoleAllowed(role, ["owner", "manager", "staff", "chef"])) {
       res.status(403).json({ error: "Access denied" });
       return;
     }
@@ -103,7 +103,7 @@ router.put(
   }
 );
 
-// Delete inventory item (Only owner, manager, staff, "chief")
+// Delete inventory item (Only owner, manager, staff, "chef")
 router.delete(
   "/:id",
   authenticateBusinessOwnerJWT,
@@ -111,7 +111,7 @@ router.delete(
     const id = Number(req.params.id);
     const role = req.businessOwner?.role;
 
-    if (!isRoleAllowed(role, ["owner", "manager", "staff", "chief"])) {
+    if (!isRoleAllowed(role, ["owner", "manager", "staff", "chef"])) {
       res.status(403).json({ error: "Access denied" });
       return;
     }

@@ -6,7 +6,7 @@ export interface BusinessOwnerPayload {
   userId: number;
   email: string;
   businessId: number;
-  role: "Owner" | "SuperAdmin" | "Manager" | "Staff" | "Chief"; 
+  role: "Owner" | "SuperAdmin" | "Manager" | "Staff" | "Chef"; 
 }
 
 export interface CustomerPayload {
